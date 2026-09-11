@@ -23,9 +23,12 @@ int Stack::top() const {
 }
 
 bool Stack::isEmpty() const {
-    // TODO: return whether data_ has zero elements
+    // Evaluate if empty based on the size helper method
+    if (this->size() == 0) return true;
+    return false;
 }
 
 int Stack::size() const {
-    // TODO: return how many elements are in data_ (cast to int)
+    // Size must be static cast into a signed int from an unsigned int.
+    return static_cast<int>(data_.size());
 }
