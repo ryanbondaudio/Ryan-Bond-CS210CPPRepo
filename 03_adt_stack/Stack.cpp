@@ -9,11 +9,14 @@
 #include "Stack.h"
 
 void Stack::push(int value) {
-    // TODO: add value to the top of data_ (vector has a method for this)
+    // Used the vector push_back method to add @param to the last element of the stack.
+    data_.push_back(value);
 }
 
 void Stack::pop() {
-    // TODO: if data_ isn't empty, remove the top element
+    // Check to see if the stack is empty; if so, return; if not, remove the last element.
+    if (this->isEmpty()) return;
+    data_.pop_back();
 }
 
 int Stack::top() const {

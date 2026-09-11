@@ -4,3 +4,7 @@ stack, the output was as follows:
 
 Stack size: 1
 Is empty? no
+
+2. Fixed a misleading size printout in main during push/pop testing. The console originally printed a size of 3 when
+the size should have been 2 (3 push calls and 1 pop call) because the print statement occurred before the pop method was
+called. I verified this through debugging and verified that the stack logic is working properly.

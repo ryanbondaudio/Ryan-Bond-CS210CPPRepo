@@ -17,7 +17,9 @@ int main() {
     std::cout << "Stack size: " << s.size() << std::endl;
     //std::cout << "Top: " << s.top() << std::endl;
 
-    //s.pop();
+    s.pop();
+    // Added an extra check to make sure the pop method functions correctly
+    std::cout << "Stack size: " << s.size() << std::endl;
     //std::cout << "After pop, top: " << s.top() << std::endl;
     std::cout << "Is empty? " << (s.isEmpty() ? "yes" : "no") << std::endl;
 
