@@ -20,9 +20,9 @@ void Stack::pop() {
 }
 
 int Stack::top() const {
-    // TODO: return the top element of data_
-    // undefined if empty -- callers should check isEmpty() first. We'll
-    // harden this kind of thing later in the course.
+    // Return -1 if the stack is empty; otherwise, return the element on top of the stack.
+    if (this->isEmpty()) return -1;
+    return data_.back();
 }
 
 bool Stack::isEmpty() const {
