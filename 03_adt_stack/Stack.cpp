@@ -33,17 +33,17 @@ int Stack::peek() const {
 }
 
 bool Stack::isEmpty() const {
-    //Evaluate if empty based on the size helper method
-    //if (this->size() == 0) return true;
-    //return false;
+    // Evaluate if the size is 0 (empty) based on the value returned by the size helper method
+    return this->size() == 0;
 }
 
 bool Stack::isFull() const {
-    //if (this->size() == 100) return true;
-    //return false;
+    // Evaluate if size is equal to 100 (full) based on the value returned by the size helper method
+    return this->size() == 100;
 }
 
 int Stack::size() const {
-    // Size must be static cast into a signed int from an unsigned int.
-    //return static_cast<int>(data.size());
+    // Size is acquired by reading the value of the top index of the array (-1 if empty, and 99 if full)
+    // and adding one
+    return topIndex + 1;
 }
