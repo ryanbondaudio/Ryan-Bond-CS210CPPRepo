@@ -5,3 +5,5 @@ successfully tested the size method.
 a LIFO stack order.
 
 3. Implemented and verified top method is functioning, correctly returning the last element of the stack.
+
+4. Reworked 

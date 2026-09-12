@@ -15,18 +15,18 @@
 
 class Stack {
 public:
-    void push(int value);   // add to the top
-    void pop();              // remove the top (does nothing if empty)
-    int top() const;         // look at the top without removing it
-    bool isEmpty() const;
-    int size() const;
+
+    Stack();                // Sets default values for empty array and top index of -1.
+    void push(int value);   // Add to the top.
+    void pop();             // Remove the top (does nothing if empty).
+    int peek() const;       // Look at the top without removing it.
+    bool isEmpty() const;   // Checks if the array is empty or not.
+    bool isFull() const;    // Checks if the array has hit the limit (100).
+    int size() const;       // Gives the size of the array as an int.
+
 
 private:
-    // This is the REPRESENTATION. It's private on purpose: nothing
-    // outside this class should touch data_ directly, or depend on it
-    // being a vector specifically. If we swap this out for a linked
-    // list next semester, every .cpp file that #includes this header
-    // and only calls push/pop/top/isEmpty/size doesn't need to change
-    // at all.
-    std::vector<int> data_;
+
+    int data[100];
+    int topIndex;
 };

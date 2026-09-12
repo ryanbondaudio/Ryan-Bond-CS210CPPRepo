@@ -8,30 +8,42 @@
 
 #include "Stack.h"
 
+Stack::Stack()
+    // Set to default values (empty and -1)
+    : data {}
+    , topIndex {-1}
+{
+}
+
 void Stack::push(int value) {
-    // Used the vector push_back method to add @param to the last element of the stack.
-    data_.push_back(value);
+    //Used the vector push_back method to add @param to the last element of the stack.
+    //data_.push_back(value);
 }
 
 void Stack::pop() {
-    // Check to see if the stack is empty; if so, return; if not, remove the last element.
-    if (this->isEmpty()) return;
-    data_.pop_back();
+    //Check to see if the stack is empty; if so, return; if not, remove the last element.
+    //if (this->isEmpty()) return;
+    //data_.pop_back();
 }
 
-int Stack::top() const {
-    // Return -1 if the stack is empty; otherwise, return the element on top of the stack.
-    if (this->isEmpty()) return -1;
-    return data_.back();
+int Stack::peek() const {
+    //Return -1 if the stack is empty; otherwise, return the element on top of the stack.
+    //if (this->isEmpty()) return -1;
+    //return data_.back();
 }
 
 bool Stack::isEmpty() const {
-    // Evaluate if empty based on the size helper method
-    if (this->size() == 0) return true;
-    return false;
+    //Evaluate if empty based on the size helper method
+    //if (this->size() == 0) return true;
+    //return false;
+}
+
+bool Stack::isFull() const {
+    //if (this->size() == 100) return true;
+    //return false;
 }
 
 int Stack::size() const {
     // Size must be static cast into a signed int from an unsigned int.
-    return static_cast<int>(data_.size());
+    //return static_cast<int>(data.size());
 }

@@ -15,12 +15,12 @@ int main() {
     s.push(30);
 
     std::cout << "Stack size: " << s.size() << std::endl;
-    std::cout << "Top: " << s.top() << std::endl;
+    std::cout << "Top: " << s.peek() << std::endl;
 
     s.pop();
     // Added an extra check to make sure the pop method functions correctly
     std::cout << "Stack size: " << s.size() << std::endl;
-    std::cout << "After pop, top: " << s.top() << std::endl;
+    std::cout << "After pop, top: " << s.peek() << std::endl;
     std::cout << "Is empty? " << (s.isEmpty() ? "yes" : "no") << std::endl;
 
     return 0;
