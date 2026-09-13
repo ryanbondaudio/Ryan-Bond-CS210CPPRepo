@@ -11,3 +11,6 @@ a LIFO stack order.
 -- After reworking correct methods without STL or vector methods --
 
 1. Implemented the Size(), isFull(), and isEmpty() methods and verified that they function correctly.
+
+2. Implemented the peek() method, which returns prints an error or sentinel value if the index being accessed is 
+out of bounds.

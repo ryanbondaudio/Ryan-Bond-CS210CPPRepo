@@ -8,6 +8,9 @@
 
 #include "Stack.h"
 
+#include <iostream>
+#include <ostream>
+
 Stack::Stack()
     // Set to default values (empty and -1)
     : data {}
@@ -28,8 +31,11 @@ void Stack::pop() {
 
 int Stack::peek() const {
     //Return -1 if the stack is empty; otherwise, return the element on top of the stack.
-    //if (this->isEmpty()) return -1;
-    //return data_.back();
+    if (topIndex < 0 || topIndex >= 100) {
+        std::cerr << "Error: Out of bounds index" << std::endl;
+        return -1;
+    }
+    return topIndex;
 }
 
 bool Stack::isEmpty() const {
