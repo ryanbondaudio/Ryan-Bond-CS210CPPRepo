@@ -11,10 +11,12 @@
 
 #pragma once
 
-#include <vector>
+
 
 class Stack {
 public:
+    static constexpr int CAPACITY = 100; // The array will only ever be this large; it cannot be changed or modified
+                                         // and will be determined at compile time.
 
     Stack();                // Sets default values for empty array and top index of -1.
     void push(int value);   // Add to the top.
@@ -26,7 +28,7 @@ public:
 
 
 private:
-
-    int data[100];
+    // Fixed array set at 100
+    int data[CAPACITY];
     int topIndex;
 };

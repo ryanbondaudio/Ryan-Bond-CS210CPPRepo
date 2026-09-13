@@ -14,3 +14,6 @@ a LIFO stack order.
 
 2. Implemented the peek() method, which returns prints an error or sentinel value if the index being accessed is 
 out of bounds.
+
+3. Implemented push() and pop() to correctly increment the index and add value at element, and decrement index
+respectively. Also fixed peek() to return value held at index.

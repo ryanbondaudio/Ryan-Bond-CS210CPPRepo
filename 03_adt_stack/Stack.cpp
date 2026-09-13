@@ -1,15 +1,10 @@
 // TASK 03 -- The Stack ADT's implementation
 //
-// This is where "how" lives. We chose std::vector as the backing
-// storage: push_back is our push, back() is our top, pop_back() is our
-// pop. A student could rewrite this whole file to use a raw fixed-size
-// array instead, and as long as push/pop/top/isEmpty/size still behave
-// the same way, nothing calling this class would ever notice.
+// This is where "how" lives. We chose a C-style array as the backing storage.
 
 #include "Stack.h"
 
 #include <iostream>
-#include <ostream>
 
 Stack::Stack()
     // Set to default values (empty and -1)
@@ -19,23 +14,35 @@ Stack::Stack()
 }
 
 void Stack::push(int value) {
-    //Used the vector push_back method to add @param to the last element of the stack.
-    //data_.push_back(value);
+    // Print error message and return from method if the stack is full to avoid stack overflow. If the stack is not
+    // full, increment the top index, then assign the value at the top index to the value passed by @param value.
+    if (this->isFull()) {
+       std::cerr << "Error: Cannot push; stack is full" << std::endl;
+        return;
+    }
+    ++topIndex;
+    data[topIndex] = value;
+
 }
 
 void Stack::pop() {
-    //Check to see if the stack is empty; if so, return; if not, remove the last element.
-    //if (this->isEmpty()) return;
-    //data_.pop_back();
+    // Check to see if the stack is empty; if so, print an error message and return; if not, remove the last element by
+    // decrementing the top index.
+    if (this->isEmpty()) {
+        std::cerr << "Error: Cannot pop; stack is empty" << std::endl;
+         return;
+    }
+
+    --topIndex;
 }
 
 int Stack::peek() const {
     //Return -1 if the stack is empty; otherwise, return the element on top of the stack.
-    if (topIndex < 0 || topIndex >= 100) {
-        std::cerr << "Error: Out of bounds index" << std::endl;
+    if (topIndex < 0 || topIndex >= CAPACITY) {
+        std::cerr << "Error: Cannot peek; out of bounds index " << topIndex << std::endl;
         return -1;
     }
-    return topIndex;
+    return data[topIndex];
 }
 
 bool Stack::isEmpty() const {
@@ -44,8 +51,8 @@ bool Stack::isEmpty() const {
 }
 
 bool Stack::isFull() const {
-    // Evaluate if size is equal to 100 (full) based on the value returned by the size helper method
-    return this->size() == 100;
+    // Evaluate if size is equal to CAPACITY based on the value returned by the size helper method
+    return this->size() == CAPACITY;
 }
 
 int Stack::size() const {

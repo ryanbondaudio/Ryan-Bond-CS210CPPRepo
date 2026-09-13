@@ -15,3 +15,8 @@ called. I verified this through debugging and verified that the stack logic is w
 -- After reworking correct methods without STL or vector methods --
 
 1. Incorrectly calling the peek method with no body in main, leading to undefined behavior in the program.
+
+2. Fixed push() which included an extra broken condition (returning if stack was empty or full). Fixed to only 
+return when full so items can be added when the stack is empty.
+
+3. Fixed peek to return value held at index instead of the index.

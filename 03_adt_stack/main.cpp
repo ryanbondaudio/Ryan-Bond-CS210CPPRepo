@@ -10,15 +10,15 @@
 int main() {
     Stack s;
 
-    //s.push(10);
-    //s.push(20);
-    //s.push(30);
+    s.push(10);
+    s.push(20);
+    s.push(30);
 
     std::cout << "Stack size: " << s.size() << std::endl;
     std::cout << "Top: " << s.peek() << std::endl;
 
-    //s.pop();
-    //std::cout << "After pop, top: " << s.peek() << std::endl;
+    s.pop();
+    std::cout << "After pop, top: " << s.peek() << std::endl;
     std::cout << "Is empty? " << (s.isEmpty() ? "yes" : "no") << std::endl;
 
     return 0;
@@ -26,4 +26,4 @@ int main() {
 
 // TRY IT LIVE: ask the class "what data structure is UNDER this stack?"
 // Nobody can answer just from reading this file, and that's correct --
-// it's not their business. Then open Stack.h to reveal it's a vector.
+// it's not their business. Then open Stack.h to reveal it's a C-style array.
